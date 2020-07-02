@@ -1,0 +1,11 @@
+from src.entity.pokemon import PokemonEntity
+from src.entity.entrenador import EntrenadorEntity
+from src.model.entrenador import Entrenador
+
+entrenador = EntrenadorEntity(1, 'lola', True, 12.3, 'gold')
+
+entrenadores = Entrenador()
+
+entrenadores.create(entrenador)
+
+print(entrenadores.show_entrenadores())
