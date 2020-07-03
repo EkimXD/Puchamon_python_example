@@ -8,5 +8,6 @@ class PokemonEntity:
     id: int
     name: str
     active: bool
-    level: str
+    type: str
+    level: int
     id_trainer: int

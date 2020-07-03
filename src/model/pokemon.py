@@ -10,13 +10,13 @@ class Pokemon():
             self.pokemones = json.load(file)
 
     def create(self, pokemon: PokemonEntity):
-        self.pokemones.append(pokemon.to_json())
+        self.pokemones.append(pokemon.to_dict())
 
     def update(self, id: int, pokemon: PokemonEntity):
         pokemon.id = id
         for i in range(0, len(self.pokemones)):
             if self.pokemones[i]['id'] == id:
-                self.pokemones[i] = pokemon.to_json()
+                self.pokemones[i] = pokemon.to_dict()
                 print('Updated!')
                 break
 
@@ -25,6 +25,13 @@ class Pokemon():
             if pokemon['id'] == id:
                 return pokemon
         return None
+
+    def find_all(self, id_trainer: int):
+        pokemones = []
+        for pokemon in self.pokemones:
+            if pokemon['id_trainer'] == id_trainer:
+                pokemones.append(pokemon)
+        return pokemones
 
     def delete(self, id: int):
         pokemon = self.find(id)

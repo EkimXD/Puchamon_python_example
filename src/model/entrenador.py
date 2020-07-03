@@ -10,13 +10,13 @@ class Entrenador():
             self.entrenadores = json.load(file)
 
     def create(self, entrenador: EntrenadorEntity):
-        self.entrenadores.append(entrenador.to_json())
+        self.entrenadores.append(entrenador.to_dict())
 
     def update(self, id: int, entrenador: EntrenadorEntity):
         entrenador.id = id
         for i in range(0, len(self.entrenadores)):
             if self.entrenadores[i]['id'] == id:
-                self.entrenadores[i] = entrenador.to_json()
+                self.entrenadores[i] = entrenador.to_dict()
                 print('Updated!')
                 break
 
