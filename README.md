@@ -63,7 +63,7 @@ PokemonController().update_pokemon(1,pokemon)
 EntrenadorController().show_data()
 ~~~
 
-##Show all pokemones
+## Show all pokemones
 
 ~~~
 PokemonController().show_all()
